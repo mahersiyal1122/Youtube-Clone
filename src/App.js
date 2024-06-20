@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from 'react'
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import Shorts from './pages/Shorts';
+import Subscriptions from './pages/Subscriptions';
+import SideBar from './components/SideBar';
+import Watch from './pages/Watch';
+import You from './pages/You';
+import History from './pages/History';
+import SideBarTranslate from './components/SideBarTranslate';
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <main>
+      <Navbar />
+      <div className='flex'>
+        <SideBar />
+        <SideBarTranslate/>
+        <Routes>
+          <Route path='/' exact element={<Home />} />
+          <Route path='/shorts' element={<Shorts />} />
+          <Route path='/feed/subscriptions' element={<Subscriptions />} />
+          <Route path='/feed/you' element={<You/>} />
+          <Route path='/feed/history' element={<History/>} />
+          <Route path='/watch/:videoTitle' element={<Watch />} />
+        </Routes>
+      </div>
+    </main>
+  )
 }
 
-export default App;
+export default App

@@ -1,13 +1,161 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: #0f0f0f;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components{
+    .navbar_ul li {
+        @apply flex items-center gap-[10px] text-sm px-5 py-3 cursor-pointer hover:bg-[#5a5656] transition-colors duration-100
+    }
+    .navbar_ul li>span:nth-child(1){
+        @apply text-[16px]
+    }
+    .navbar_ul li span:nth-child(2){
+        @apply flex items-center justify-between w-full
+    }
+    .navbar_ul li span:nth-child(2) span:last-child{
+        @apply w-max
+    }
+    .flex_row_center{
+        @apply flex items-center
+    }
+    .flex_col{
+        @apply flex flex-col
+    }
+    .sidebarIconBox{
+        @apply flex items-center gap-5 py-[10px] px-4 mx-[10px] text-sm hover:bg-zinc-800 cursor-pointer rounded-lg 
+    }
+    .sidebarIconBox2nd{
+        @apply flex flex-col gap-1 items-center text-[10px] w-full py-4 hover:bg-zinc-800 cursor-pointer rounded-lg max-[600px]:px-0 max-[600px]:py-0 max-[600px]:pt-[6px] max-[600px]:hover:bg-transparent max-[600px]:rounded-none
+    }
+    .sidebarIcons{
+        @apply text-2xl
+    }
+    .sidebarIconBox2nd .sidebarIcons{
+        @apply text-xl max-[600px]:text-lg
+    }
+    .sidebar_hr{
+        @apply my-3 border-zinc-600
+    }
+
+    /* #homeStickyBar::before{
+        @apply content-["<"] text-white bg-black text-2xl font-light w-9 h-9 items-center justify-center rounded-full z-10 absolute top-3 left-5 hidden
+
+    }
+    #homeStickyBar::after{
+        @apply content-[">"] text-white bg-black text-2xl font-light w-9 h-9 items-center justify-center rounded-full z-10 absolute top-3 right-5 hidden
+    } */
+
+    
+}
+
+#sidebar::-webkit-scrollbar{
+    width: 8px;
+}
+#sidebar::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+#sidebar::-webkit-scrollbar-thumb {
+    background-color: #504f4f;
+    border-radius: 8px;
+}
+#sidebar::-ms-scrollbar{
+    width: 8px;
+}
+#sidebar::-ms-scrollbar-track{
+    background-color: transparent;
+}
+#sidebar::-ms-scrollbar-thumb {
+    background-color: #504f4f;
+    border-radius: 8px;
+}
+
+#sidebarTranslate::-webkit-scrollbar{
+    display: none;
+}
+#sidebarTranslate::-ms-scrollbar{
+    display: none;
+}
+
+#homeStickyBarDiv::-webkit-scrollbar{
+    display: none;
+}
+#homeStickyBarDiv::-ms-scrollbar{
+    display: none;
+}
+
+
+#homeVideos::-webkit-scrollbar{
+    width: 12px;
+}
+#homeVideos::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+#homeVideos::-webkit-scrollbar-thumb {
+    background-color: #504f4f;
+    border-radius: 8px;
+}
+#homeVideos::-ms-scrollbar{
+    width: 12px;
+}
+#homeVideos::-ms-scrollbar-track{
+    background-color: transparent;
+}
+#homeVideos::-ms-scrollbar-thumb {
+    background-color: #504f4f;
+    border-radius: 8px;
+}
+
+#videoSection::-webkit-scrollbar{
+    width: 12px;
+}
+#videoSection::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+#videoSection::-webkit-scrollbar-thumb {
+    background-color: #969292;
+    border-radius: 12px;
+}
+#videoSection::-ms-scrollbar{
+    width: 12px;
+}
+#videoSection::-ms-scrollbar-track{
+    background-color: transparent;
+}
+#videoSection::-ms-scrollbar-thumb {
+    background-color: #504f4f;
+    border-radius: 12px;
+}
+
+@media (max-width:600px) {
+    #homeVideos::-webkit-scrollbar{
+        display: none;
+    }
+    #homeVideos::-ms-scrollbar{
+        display: none;
+    }
+
+    #videoSection::-webkit-scrollbar{
+        display: none;
+    }
+    #videoSection::-ms-scrollbar{
+        display: none;
+    }
+    
+    .videoButtonsFlow::-webkit-scrollbar{
+        display: none;
+    }
+    .videoButtonsFlow::-ms-scrollbar{
+        display: none;
+    }
+
+
 }
