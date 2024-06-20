@@ -11,12 +11,9 @@ const YtContextProvider = (props) => {
     const [data, setData] = useState([])
     const [sideBarResize, setSideBarResize] = useState(window.innerWidth > 1200)
     const [sideBarTranslateVisibility, setSideBarTranslateVisibility] = useState(false)
-    // const [show, setShow] = useState(true);
-    // const [lastScrollY, setLastScrollY] = useState(0);
-    // const API_KEY=process.env.REACT_APP_YT_API_KEY ;
-    // const API_KEY = "AIzaSyDCc095JMBFI2tZcCYLLv6GFxy3Q42QOx0"; //mahersiyal1122
-    // const API_KEY = "AIzaSyDSf8wbARMV0JBZVvz7x3NuPb33TD74XIw"; // 
-    const API_KEY = "AIzaSyA3BVkpLTJtJfEajG4szFVZ6Oc5ewD2Tso"; // maharzulqarsiyal1122
+    
+    const API_KEY=process.env.REACT_APP_YT_API_KEY ;
+    console.log(API_KEY);
     const max_Result = '25'
 
 
@@ -143,7 +140,6 @@ const YtContextProvider = (props) => {
     useEffect(() => {
         if (data.length>0) {
             fetchData()
-            console.log(videosData);
         }
     }, [data, getVideoData])
 
