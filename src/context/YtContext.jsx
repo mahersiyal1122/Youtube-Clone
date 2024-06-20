@@ -13,7 +13,6 @@ const YtContextProvider = (props) => {
     const [sideBarTranslateVisibility, setSideBarTranslateVisibility] = useState(false)
     
     const API_KEY=process.env.REACT_APP_YT_API_KEY ;
-    console.log(API_KEY);
     const max_Result = '25'
 
 
